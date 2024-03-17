@@ -8,6 +8,7 @@ def add_todo():
     todo = st.session_state["new_todo"] + "\n"
     todos.append(todo)
     fn.write_todos(todos)
+    st.session_state["new_todo"] = ""
 
 
 st.title("My To-do App")
@@ -22,5 +23,5 @@ for index, todo in enumerate(todos):
         del st.session_state[todo]
         st.rerun()
 
-st.text_input(label="", placeholder="Add new task...",
-              on_change=add_todo, key='new_todo')
+task_input = st.text_input(label="",placeholder="Add new task...",
+                           on_change=add_todo, key='new_todo',)
