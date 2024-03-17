@@ -2,7 +2,7 @@ import streamlit as st
 import functions as fn
 
 todos = fn.get_todos()
-
+st.set_page_config(layout="responsi")
 
 def add_todo():
     todo = st.session_state["new_todo"] + "\n"
